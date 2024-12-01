@@ -22,7 +22,7 @@
   "author": "Dhruva Vig",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/dhruva-antino/shared-jobber-update.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
