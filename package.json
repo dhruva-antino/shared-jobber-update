@@ -39,7 +39,6 @@
   },
   "types": "./src/index.d.ts",
   "dependencies": {
-    "@dhruva-antino/shared-jobber": "^0.0.1",
     "@elastic/elasticsearch": "^8.13.0",
     "cloudinary": "^2.1.0",
     "express": "^4.21.1",
