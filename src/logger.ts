@@ -18,6 +18,10 @@ export const winstonLogger = (elasticsearchNode: string, name: string, level: st
       transformer: esTransformer,
       clientOpts: {
         node: elasticsearchNode,
+        auth: {
+          username: 'elastic',
+          password: 'admin1234',
+        },
         log: level,
         maxRetries: 2,
         requestTimeout: 10000,
@@ -30,6 +34,9 @@ export const winstonLogger = (elasticsearchNode: string, name: string, level: st
     exitOnError: false,
     defaultMeta: { service: name },
     transports: [new winston.transports.Console(options.console), esTransport]
+  });
+  esTransport.on('error', (error) => {
+    console.error('Elasticsearch Transport Error:', error.message);
   });
   return logger;
 }
